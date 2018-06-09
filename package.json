@@ -2,11 +2,12 @@
   "name": "react-webpack",
   "version": "1.0.0",
   "description": "React App using Webpack, React-Router and Redux.",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "eslint:watch": "esw -w --fix ./src --ext .jsx --ext .js",
-    "develop": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "develop": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,12 +29,17 @@
   },
   "homepage": "https://github.com/sumit194/react-webpack#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1",
+    "semantic-ui-react": "^0.81.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -44,8 +50,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "eslint-watch": "^3.1.5",
+    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.11.1",
-    "webpack-cli": "^3.0.2"
+    "webpack-cli": "^3.0.2",
+    "webpack-dev-server": "^3.1.4"
   }
 }
