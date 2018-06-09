@@ -8,7 +8,7 @@ const Routes = () => (
     <Switch>
       <Route path="/login" exact component={Login} />
       <Route path="/register" exact component={Signup} />
-      <Redirect to="/login" />
+      <Redirect from="/" to="/login" />
     </Switch>
   </Router>
 );
