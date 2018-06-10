@@ -25,10 +25,11 @@ npm run prod
 ## Features
  - **React Router**
  - **Webpack**
- - **Basic Login, Signup Page**
+ - **Basic Login, Signup and Home Pages**
  - **Eslint**
  - **Eslint Watch**
+ - **Redux Store**
 
 
 ## To Do
-- **Add the Redux Store to maintain global state**
+- **Add Router to Redux Store**

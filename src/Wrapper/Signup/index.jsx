@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react';
 
@@ -56,4 +57,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default connect(null, null)(Signup);

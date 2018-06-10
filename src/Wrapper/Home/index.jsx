@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Input, Menu, Divider } from 'semantic-ui-react';
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { activeItem: 'home' };
@@ -11,6 +12,7 @@ export default class Home extends Component {
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
     if (name === 'logout') {
+      this.props.logout();
       this.props.history.push('/login');
     }
   }
@@ -62,4 +64,11 @@ Home.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  logout: PropTypes.func.isRequired,
 };
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch({ type: 'LOG_OUT' }),
+});
+
+export default connect(null, mapDispatchToProps)(Home);

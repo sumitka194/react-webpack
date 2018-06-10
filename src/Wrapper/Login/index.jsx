@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
@@ -14,6 +15,7 @@ class Login extends Component {
 
   submit = () => {
     if (this.state.email && this.state.password) {
+      this.props.login();
       this.props.history.push('/home');
     }
   }
@@ -71,6 +73,11 @@ Login.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  login: PropTypes.func.isRequired,
 };
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  login: () => dispatch({ type: 'LOG_IN' }),
+});
+
+export default connect(null, mapDispatchToProps)(Login);
