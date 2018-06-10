@@ -5,6 +5,9 @@ module.exports = {
         "browser": true,
         "node": true
     },
+    "settings": {
+        "import/core-modules": ["prop-types"],
+    },
     "rules": {
         "jsx-a11y/anchor-is-valid": "off"
     }

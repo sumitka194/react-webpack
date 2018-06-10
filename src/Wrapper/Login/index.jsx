@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
@@ -12,12 +13,14 @@ class Login extends Component {
   }
 
   submit = () => {
-    console.log(this.state);
+    if (this.state.email && this.state.password) {
+      this.props.history.push('/home');
+    }
   }
 
   render() {
     return (
-      <div className="login-form" style={{ background: 'linear-gradient(to right bottom, #430089, #82ffa1)' }} >
+      <div className="login-form" style={{ background: 'linear-gradient(to right bottom, #008080, #0E6EB8)' }} >
         <style>
           {`
             body > div,
@@ -63,5 +66,11 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Login;
