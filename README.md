@@ -32,4 +32,5 @@ npm run prod
 
 
 ## To Do
-- **Add Router to Redux Store**
+- **Write Action Creater**
+- **Add middleware methods**
