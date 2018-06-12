@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Input, Menu, Divider } from 'semantic-ui-react';
+import { logout } from '../../redux/action';
 
 class Home extends Component {
   constructor(props) {
@@ -68,7 +69,7 @@ Home.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch({ type: 'LOG_OUT' }),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

@@ -28,9 +28,10 @@ npm run prod
  - **Basic Login, Signup and Home Pages**
  - **Eslint**
  - **Eslint Watch**
+ - **Added Action Creators**
  - **Redux Store**
 
 
 ## To Do
-- **Write Action Creater**
+- **Improve Router Redux Integration**
 - **Add middleware methods**

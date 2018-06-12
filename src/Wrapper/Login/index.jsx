@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { login } from '../../redux/action';
 
 class Login extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ Login.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  login: () => dispatch({ type: 'LOG_IN' }),
+  login: () => dispatch(login()),
 });
 
 export default connect(null, mapDispatchToProps)(Login);
